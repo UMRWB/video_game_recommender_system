@@ -1,0 +1,11 @@
+# Tell pip to also look at the PyTorch CUDA 12.8 index
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+streamlit
+pandas
+numpy
+scipy
+pyarrow
+scikit-learn
+torch==2.7.0+cu128
+sentence-transformers
