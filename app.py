@@ -140,7 +140,7 @@ st.markdown(  # Enhanced CSS with corrected title color and tag hover effects
 
 # --- Global Constants & Cache File Paths (Unchanged) ---
 DATA_FILE = "games_data_cleaned.csv"
-N_CLUSTERS_DEFAULT = 11
+N_CLUSTERS_DEFAULT = 40
 CACHE_DIR = "streamlit_cache"
 PROCESSED_DATA_PATH = os.path.join(CACHE_DIR, "processed_data_listtags_wscore.parquet")
 FEATURES_TITLE_PATH = os.path.join(CACHE_DIR, "features_embeddings_title.npy")
