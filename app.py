@@ -140,7 +140,7 @@ st.markdown(  # Enhanced CSS with corrected title color and tag hover effects
 
 # --- Global Constants & Cache File Paths (Unchanged) ---
 DATA_FILE = "games_data_cleaned.csv"
-N_CLUSTERS_DEFAULT = 40
+N_CLUSTERS_DEFAULT = 11
 CACHE_DIR = "streamlit_cache"
 PROCESSED_DATA_PATH = os.path.join(CACHE_DIR, "processed_data_listtags_wscore.parquet")
 FEATURES_TITLE_PATH = os.path.join(CACHE_DIR, "features_embeddings_title.npy")
@@ -358,7 +358,8 @@ def perform_clustering(_df, _features, cache_path):  # Pass CLUSTERED_DATA_PATH 
         df_clustered["cluster"] = -1
     else:
         combined = np.hstack(features_to_stack)
-        n_clusters = max(5, min(N_CLUSTERS_DEFAULT, int(len(df_clustered) ** 0.4)))
+        # n_clusters = max(5, min(N_CLUSTERS_DEFAULT, int(len(df_clustered) ** 0.4)))
+        n_clusters = N_CLUSTERS_DEFAULT
         print(f"Using {n_clusters} clusters.")
         kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
         df_clustered["cluster"] = kmeans.fit_predict(combined)
